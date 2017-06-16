@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html >
+<head>
+  <meta charset="UTF-8">
+  <title>Goey Blood Loader</title>
+  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+
+  
+      <link rel="stylesheet" href="css/loading.css">
+
+  
+</head>
+
+<body>
+  <!-- Inspired from http://codepen.io/TeamJasperKeyplay/pen/BQVYmM -->
+<svg xmlns="http://www.w3.org/2000/svg" version="1.1">
+  <defs>
+    <filter id="goo">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="10" result="blur" />
+      <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 19 -9" result="goo" />
+      <feComposite in="SourceGraphic" in2="goo" operator="atop"/>
+    </filter>
+  </defs>
+</svg>
+<div class="container">
+  <div class="blood">
+    <span class="drop moving"></span>
+    <span class="drop"></span>
+    <span class="drop"></span>
+    <span class="drop"></span>
+    <span class="drop"></span>
+  </div>
+  <h2 class="loader-text">Loading...</h2>
+ </div>
+  
+  
+</body>
+</html>

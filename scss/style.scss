@@ -1,0 +1,103 @@
+@import url(https://fonts.googleapis.com/css?family=Creepster);
+/* The version of Bourbon used in this Pen was 4.* */
+@import "bourbon";
+
+/* Only for demo */
+.background{
+  display: inline-block;
+  height: 100%;
+  width: 100%;
+  background-image: url(https://unsplash.it/g/1000/900?image=878);
+  backround-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+}
+.overlay{
+  display: inline-block;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.6);
+}
+.text{
+  font-family: 'Creepster', cursive;
+}
+
+/* Where the magic happens */
+.vector{
+  position: relative;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  width: 100%;
+  mix-blend-mode: screen;
+}
+.group-1{
+  fill: #731113;
+  @include animation(groupOne 34s);
+}
+.group-2{
+  fill: #8e1517;
+  @include animation(groupTwo 39s );
+}
+.group-3{
+  fill: #350809;
+  @include animation(groupThree 140s);
+}
+.group-4{
+  fill: #ff1a1a;
+  @include animation(groupFour 43s);
+}
+.group-1, .group-2, .group-3, .group-4{
+  @include animation-iteration-count(infinite);
+  @include transform(translateZ(0));
+}
+/* Animations */
+@include keyframes(groupOne) {
+  0% {
+    @include transform(translateY(0) rotate(-0deg) scale(0.8));
+  }
+  60% {
+    @include transform(translateY(80px) rotate(-93deg) scale(1));
+  }
+  100% {
+    @include transform(translateY(0) rotate(-0deg) scale(0.8));
+  }
+}
+
+@include keyframes(groupTwo) {
+  0% {
+    @include transform(translateX(0)  translateY(0) rotate(-0deg) scale(0.6));
+  }
+  60% {
+    @include transform(translateX(6px) translateY(-10px) rotate(4deg) scale(1));
+  }
+  100% {
+    @include transform(translateX(0) translateY(0) rotate(-0deg) scale(0.6));
+  }
+}
+
+@include keyframes(groupThree) {
+  0% {
+    @include transform(translateX(0)  translateY(0) rotate(-0deg));
+  }
+  60% {
+    @include transform(translateX(400%) translateY(60px) rotate(14deg));
+  }
+  100% {
+    @include transform(translateX(0) translateY(0) rotate(-0deg));
+  }
+}
+
+@include keyframes(groupFour) {
+  0% {
+    @include transform(translateX(0)  translateY(0) rotate(-0deg));
+  }
+  60% {
+    @include transform(translateX(-100%) translateY(-60px) rotate(-16deg));
+  }
+  100% {
+    @include transform(translateX(0) translateY(0) rotate(-0deg));
+  }
+}
